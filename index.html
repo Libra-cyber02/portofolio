@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Nama Anda</title>
+  <meta name="description" content="Portfolio profesional - Developer, Designer, Creator" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+  <!-- Cursor Glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ===== INTRO SHARINGAN ZOOM ===== -->
+  <div class="intro-overlay" id="introOverlay">
+    <div class="intro-sharingan">
+      <div class="intro-outer"></div>
+      <div class="intro-iris">
+        <div class="intro-tomoe t1"></div>
+        <div class="intro-tomoe t2"></div>
+        <div class="intro-tomoe t3"></div>
+      </div>
+      <div class="intro-pupil"></div>
+      <div class="intro-ring"></div>
+    </div>
+    <div class="intro-text">Sharingan...</div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="logo">Portfo<span>lio</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Beranda</a></li>
+        <li><a href="#about" class="nav-link">Tentang</a></li>
+        <li><a href="#skills" class="nav-link">Keahlian</a></li>
+        <li><a href="#projects" class="nav-link">Proyek</a></li>
+        <li><a href="#experience" class="nav-link">Pengalaman</a></li>
+        <li><a href="#contact" class="nav-link">Kontak</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="container hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Halo, saya</p>
+        <h1 class="hero-name">
+          <span class="name-line">Theodorus Ikhtiar Hulu</span>
+        </h1>
+        <h2 class="hero-title">
+          <span class="typed-text" id="typedText"></span>
+          <span class="cursor-blink">|</span>
+        </h2>
+        <p class="hero-desc">
+          Saya seorang mahasiswa teknik informatika angkatan 2020, suka mendalami hal-hal baru.
+          saya suka program serta pembuatan website,bidang yang di minati program,web development.
+          pekerja keras,tim work,dan suka hal-hal baru.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">Lihat Karya</a>
+          <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+        </div>
+        <div class="hero-social">
+          <a href="https://github.com/theodorus02" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/justcallme_theoo" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+         <a href="https://wa.me/081377033153" target="_blank" rel="noopener" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card" id="heroCard">
+          <!-- Susanoo / Chakra Aura Layers -->
+          <div class="susanoo-aura">
+            <div class="aura-ring aura-ring-1"></div>
+            <div class="aura-ring aura-ring-2"></div>
+            <div class="aura-ring aura-ring-3"></div>
+            <div class="chakra-particles" id="chakraParticles"></div>
+          </div>
+
+          <div class="card-glow"></div>
+          
+          <!-- Sharingan Eye -->
+          <div class="sharingan-wrapper" id="sharingan">
+            <div class="sharingan">
+              <div class="sharingan-outer"></div>
+              
+              <!-- Normal Sharingan Iris -->
+              <div class="sharingan-iris normal-iris">
+                <div class="tomoe tomoe-1"></div>
+                <div class="tomoe tomoe-2"></div>
+                <div class="tomoe tomoe-3"></div>
+              </div>
+
+              <!-- Mangekyou Sharingan Iris (hidden by default) -->
+              <div class="sharingan-iris mangekyou-iris">
+                <div class="mange-blade blade-1"></div>
+                <div class="mange-blade blade-2"></div>
+                <div class="mange-blade blade-3"></div>
+                <div class="mange-center"></div>
+              </div>
+
+              <div class="sharingan-pupil"></div>
+              <div class="sharingan-glow"></div>
+            </div>
+            <div class="sharingan-status">
+              <span class="status-text" id="sharinganStatus">Sharingan</span>
+              <span class="status-dot-red"></span>
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat">
+              <span class="stat-num" data-target="2">0</span>+
+              <span class="stat-label">Proyek</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-target="5">0</span>+
+              <span class="stat-label">Tahun</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num" data-target="14">0</span>+
+              <span class="stat-label">Klien</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down">
+      <span>Scroll</span>
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tentang Saya</span>
+        <h2 class="section-title">Siapa di balik layar?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="image-frame">
+            <div class="image-placeholder">
+              <i class="fas fa-code"></i>
+              <div class="about-image">
+    <div class="image-frame">
+        <img src="theo.png" alt="Foto Saya" class="about-photo">
+        <div class="frame-decoration"></div>
+    </div>
+</div>
+            </div>
+            <div class="frame-decoration"></div>
+          </div>
+        </div>
+        <div class="about-content">
+          <h3>Passionate Developer & Creative Thinker</h3>
+          <p>
+            Saya adalah seorang mahasiswa yang gemar mengeksplorasi dunia IT,membuat website,dan gemar hal-hal baru tentang teknologi.
+          </p>
+          <p>
+            Di luar coding, saya senang mengeksplorasi desain UI/UX terbaru, berkontribusi 
+            open source, dan terus belajar teknologi baru.
+          </p>
+          <div class="about-info">
+            <div class="info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Jakarta, Indonesia</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-envelope"></i>
+              <span>mr.libra.oktober@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <i class="fas fa-briefcase"></i>
+              <span>Available for freelance</span>
+            </div>
+          </div>
+          <a href="https://wa.me/081377033153" target="_blank" rel="noopener" class="btn btn-primary">Mari Bekerja Sama</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Keahlian</span>
+        <h2 class="section-title">Teknologi yang saya kuasai</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>HTML / CSS</span>
+                <span>95%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>JavaScript / TypeScript</span>
+                <span>90%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>React / Next.js</span>
+                <span>88%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="88"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Tailwind / SCSS</span>
+                <span>92%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="92"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-server"></i> Backend</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Node.js / Express</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Python / Django</span>
+                <span>80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>PostgreSQL / MongoDB</span>
+                <span>82%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="82"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>REST / GraphQL</span>
+                <span>87%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="87"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><i class="fas fa-tools"></i> Tools & Others</h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Git / GitHub</span>
+                <span>93%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="93"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Docker / CI-CD</span>
+                <span>75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>Figma / UI Design</span>
+                <span>85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span>AWS / Cloud</span>
+                <span>70%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tech-stack">
+        <div class="tech-item" title="React"><i class="fab fa-react"></i></div>
+        <div class="tech-item" title="Node.js"><i class="fab fa-node-js"></i></div>
+        <div class="tech-item" title="Python"><i class="fab fa-python"></i></div>
+        <div class="tech-item" title="JavaScript"><i class="fab fa-js"></i></div>
+        <div class="tech-item" title="HTML5"><i class="fab fa-html5"></i></div>
+        <div class="tech-item" title="CSS3"><i class="fab fa-css3-alt"></i></div>
+        <div class="tech-item" title="Git"><i class="fab fa-git-alt"></i></div>
+        <div class="tech-item" title="Docker"><i class="fab fa-docker"></i></div>
+        <div class="tech-item" title="Figma"><i class="fab fa-figma"></i></div>
+        <div class="tech-item" title="AWS"><i class="fab fa-aws"></i></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Proyek</span>
+        <h2 class="section-title">Karya pilihan saya</h2>
+      </div>
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="web">Web App</button>
+        <button class="filter-btn" data-filter="mobile">Mobile</button>
+        <button class="filter-btn" data-filter="ui">UI/UX</button>
+      </div>
+      <div class="projects-grid">
+        <article class="project-card" data-category="web">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://libra-cyber02.github.io/kopi-kita/" class="project-link" aria-label="Live demo"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/Libra-cyber02/kopi-kita" class="project-link" aria-label="Source code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">Web App</span>
+            <h3>Prototype coffee shop</h3>
+            <p>website coffee shop.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>Java</span>
+              <span>CSS</span>
+            </div>
+          </div>
+        </article>
+        <article class="project-card" data-category="ui">
+          <div class="project-image">
+            <div class="project-placeholder">
+              <i class="fas fa-palette"></i>
+            </div>
+            <div class="project-overlay">
+              <a href="https://theodorus02.github.io/website-jualan/" class="project-link" aria-label="Live demo"><i class="fas fa-external-link-alt"></i></a>
+              <a href="https://github.com/theodorus02/website-jualan" class="project-link" aria-label="Source code"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-cat">web app</span>
+            <h3>website penjualan</h3>
+            <p>Desain aplikasi berbasis website untuk penjualan dan bisnis.</p>
+            <div class="project-tags">
+              <span>HTML</span>
+              <span>Prototyping</span>
+              <span>Design System</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="experience section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Pengalaman</span>
+        <h2 class="section-title">Perjalanan karir saya</h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023 — 2024</span>
+            <h3>Restoran Black Onyx</h3>
+            <p>Jadi koki sekaligus kepala gudang.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">januari 2025 — maret 2025</span>
+            <h3>Binus University</h3>
+            <h4>Data sort</h4>
+            <p>pengimputan data dan penyortiran data.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">april 2026 — juni 2026</span>
+            <h3>Raja Rawit</h3>
+            <h4>Koki</h4>
+            <p>memasak,penyiapan bahan,restock.</p>
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Kontak</span>
+        <h2 class="section-title">Mari terhubung</h2>
+        <p class="section-desc">Punya proyek menarik? Atau sekadar ingin ngobrol? Jangan ragu hubungi saya.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <a href="mr.libra.oktober@gmail.com">mr.libra.oktober@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <h4>Telepon</h4>
+              <a href="tel:+6281377033153">+62 813-7703-3153</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h4>Lokasi</h4>
+              <span>Jakarta, Indonesia</span>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://github.com/theodorus02" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.instagram.com/justcallme_theoo" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+         <a href="https://wa.me/081377033153" target="_blank" rel="noopener" aria-label="whatsapp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Nama</label>
+            <input type="text" id="name" name="name" placeholder="Nama lengkap Anda" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="email@contoh.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subjek</label>
+            <input type="text" id="subject" name="subject" placeholder="Tentang apa?" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Pesan</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Kirim Pesan</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#home" class="logo">Portfo<span>lio</span></a>
+        <p>Dibangun oleh Mr.libra.</p>
+        <p class="copyright">&copy; 2026 Theo. Semua hak dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Kembali ke atas">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
