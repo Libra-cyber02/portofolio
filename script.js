@@ -189,9 +189,26 @@ document.addEventListener('DOMContentLoaded', () => {
     sharingan.addEventListener('touchend', endPress);
   }
 
-  // ----- Navbar Scroll -----
+   // ----- Navbar Scroll -----
   const navbar = document.getElementById('navbar');
   const backToTop = document.getElementById('backToTop');
+  const sections = document.querySelectorAll('section[id]'); // ← dipindah ke atas
+
+  function updateActiveNav() {
+    const scrollY = window.scrollY + 120;
+
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+
+      if (scrollY >= top && scrollY < top + height) {
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[href="#${id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }
 
   function handleScroll() {
     if (window.scrollY > 50) {
@@ -206,7 +223,6 @@ document.addEventListener('DOMContentLoaded', () => {
       backToTop.classList.remove('visible');
     }
 
-    // Active nav link
     updateActiveNav();
   }
 
@@ -229,26 +245,6 @@ document.addEventListener('DOMContentLoaded', () => {
       navLinks.classList.remove('open');
     });
   });
-
-  // ----- Active Nav on Scroll -----
-  const sections = document.querySelectorAll('section[id]');
-
-  function updateActiveNav() {
-    const scrollY = window.scrollY + 120;
-
-    sections.forEach(section => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const id = section.getAttribute('id');
-
-      if (scrollY >= top && scrollY < top + height) {
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        const active = document.querySelector(`.nav-link[href="#${id}"]`);
-        if (active) active.classList.add('active');
-      }
-    });
-  }
-
   // ----- Typing Effect -----
   const typedEl = document.getElementById('typedText');
   const roles = [
@@ -289,40 +285,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (typedEl) type();
 
-  // ----- Counter Animation -----
+ // ----- Counter Animation -----
+function startCounters() {
   const counters = document.querySelectorAll('.stat-num');
-  let countersAnimated = false;
+  
+  counters.forEach(counter => {
+    const target = +counter.getAttribute('data-target') || 0;
+    let current = 0;
+    const duration = 1600;
+    const stepTime = 20;
+    const increment = target / (duration / stepTime);
 
-  function animateCounters() {
-    if (countersAnimated) return;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        counter.textContent = target;
+        clearInterval(timer);
+      } else {
+        counter.textContent = Math.floor(current);
+      }
+    }, stepTime);
+  });
+}
 
-    const heroStats = document.querySelector('.hero-stats');
-    if (!heroStats) return;
-
-    const rect = heroStats.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      countersAnimated = true;
-      counters.forEach(counter => {
-        const target = +counter.getAttribute('data-target');
-        const duration = 2000;
-        const start = performance.now();
-
-        function update(now) {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const ease = 1 - Math.pow(1 - progress, 3);
-          counter.textContent = Math.floor(ease * target);
-          if (progress < 1) requestAnimationFrame(update);
-          else counter.textContent = target;
-        }
-
-        requestAnimationFrame(update);
-      });
-    }
-  }
-
-  window.addEventListener('scroll', animateCounters, { passive: true });
-  animateCounters();
+// Jalankan setelah intro selesai
+setTimeout(startCounters, 3200);
 
   // ----- Skill Bars Animation -----
   const skillBars = document.querySelectorAll('.skill-progress');
