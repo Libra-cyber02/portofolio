@@ -415,4 +415,31 @@ setTimeout(startCounters, 3200);
     }
   `;
   document.head.appendChild(style);
+    // ----- Background Music -----
+  const bgMusic = document.getElementById('bgMusic');
+  const musicToggle = document.getElementById('musicToggle');
+  const musicIcon = document.getElementById('musicIcon');
+  let isPlaying = false;
+
+  if (bgMusic && musicToggle) {
+    bgMusic.volume = 0.35; // volume pelan (35%)
+
+    musicToggle.addEventListener('click', () => {
+      if (isPlaying) {
+        bgMusic.pause();
+        musicToggle.classList.remove('playing');
+        musicIcon.className = 'fas fa-music';
+        isPlaying = false;
+      } else {
+        bgMusic.play().then(() => {
+          musicToggle.classList.add('playing');
+          musicIcon.className = 'fas fa-pause';
+          isPlaying = true;
+        }).catch((err) => {
+          console.log('Gagal putar audio:', err);
+          alert('Gagal memutar musik.\nPastikan file madara-theme.mp3 ada di folder yang sama dengan index.html');
+        });
+      }
+    });
+  }
 });
